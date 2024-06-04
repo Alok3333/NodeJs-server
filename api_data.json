@@ -1,0 +1,154 @@
+{
+  "data": [
+    {
+      "id": "AED",
+      "name": "United Arab Emirates Dirham",
+      "min_size": "0.01"
+    },
+    {
+      "id": "AFN",
+      "name": "Afghan Afghani",
+      "min_size": "0.01"
+    },
+    {
+      "id": "ALL",
+      "name": "Albanian Lek",
+      "min_size": "0.01"
+    },
+    {
+      "id": "AMD",
+      "name": "Armenian Dram",
+      "min_size": "0.01"
+    },
+    {
+      "id": "ANG",
+      "name": "Netherlands Antillean Gulden",
+      "min_size": "0.01"
+    },
+    {
+      "id": "AOA",
+      "name": "Angolan Kwanza",
+      "min_size": "0.01"
+    },
+    {
+      "id": "ARS",
+      "name": "Argentine Peso",
+      "min_size": "0.01"
+    },
+    {
+      "id": "AUD",
+      "name": "Australian Dollar",
+      "min_size": "0.01"
+    },
+    {
+      "id": "AWG",
+      "name": "Aruban Florin",
+      "min_size": "0.01"
+    },
+    {
+      "id": "AZN",
+      "name": "Azerbaijani Manat",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BAM",
+      "name": "Bosnia and Herzegovina Convertible Mark",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BBD",
+      "name": "Barbadian Dollar",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BDT",
+      "name": "Bangladeshi Taka",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BGN",
+      "name": "Bulgarian Lev",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BHD",
+      "name": "Bahraini Dinar",
+      "min_size": "0.001"
+    },
+    {
+      "id": "BIF",
+      "name": "Burundian Franc",
+      "min_size": "1"
+    },
+    {
+      "id": "BMD",
+      "name": "Bermudian Dollar",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BND",
+      "name": "Brunei Dollar",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BOB",
+      "name": "Bolivian Boliviano",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BRL",
+      "name": "Real",
+      "min_size": "0.01"
+    },
+    {
+      "id": "BSD",
+      "name": "Bahamian Dollar",
+      "min_size": "0.01"
+    },
+    {
+      "id": "IDR",
+      "name": "Indonesian Rupiah",
+      "min_size": "0.01"
+    },
+    {
+      "id": "ILS",
+      "name": "Israeli New Sheqel",
+      "min_size": "0.01"
+    },
+    {
+      "id": "INR",
+      "name": "Indian Rupee",
+      "min_size": "0.01"
+    },
+    {
+      "id": "MXN",
+      "name": "Mexican Peso",
+      "min_size": "0.01"
+    },
+    {
+      "id": "NZD",
+      "name": "New Zealand Dollar",
+      "min_size": "0.01"
+    },
+    {
+      "id": "PKR",
+      "name": "Pakistani Rupee",
+      "min_size": "0.01"
+    },
+    {
+      "id": "QAR",
+      "name": "Qatari Riyal",
+      "min_size": "0.01"
+    },
+    {
+      "id": "RUB",
+      "name": "Russian Ruble",
+      "min_size": "0.01"
+    },
+    {
+      "id": "USD",
+      "name": "United States Dollar",
+      "min_size": "0.01"
+    }
+  ]
+}

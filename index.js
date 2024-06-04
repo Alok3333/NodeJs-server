@@ -1,7 +1,45 @@
 const http = require("http");
+const apiData = require("./api_data.json");
 
-const server = http.createServer(() => {
-    console.log("server Date & Time: ", new Date().toLocaleDateString(), new Date().toLocaleTimeString());
+// const serverInfo = {
+//     serverName: "Crio.Do",
+//     version: "1.0.0",
+//     currentDate: new Date().toDateString(),
+//     currentTime: new Date().toTimeString(),
+// }
+
+// const server = http.createServer((req, res) => {
+//     console.log("server Date & Time: ", new Date().toLocaleDateString(), new Date().toLocaleTimeString());
+//     if (req.url === "/status") {
+//         res.writeHead(418, { "Content-Type": "application/json" });
+//         res.write(JSON.stringify(serverInfo));
+//         res.end();
+//     } else {
+//         res.writeHead(418, { "Content-Type": "text/html" });
+//         res.write("<h1>This status code is making a fool.</h1>");
+//         res.end();
+//     }
+// });
+
+const server = http.createServer((req, res) => {
+    switch (req.url) {
+        case "/":
+            res.writeHead(200, { "Content-Type": "text/html" });
+            res.write("<h1>Currency Database</h1>");
+            res.end();
+            break;
+        case "/currencies":
+            res.writeHead(200, { "Content-Type": "application/json" });
+            res.write(JSON.stringify(apiData));
+            res.end();
+            break;
+
+        default:
+            res.writeHead(404, { "Content-Type": "text/html" });
+            res.write("404 Not Found");
+            res.end();
+            break;
+    }
 });
 
 server.listen(8082, () => {
