@@ -21,27 +21,54 @@ const apiData = require("./api_data.json");
 //     }
 // });
 
+// const server = http.createServer((req, res) => {
+//     switch (req.url) {
+//         case "/":
+//             res.writeHead(200, { "Content-Type": "text/html" });
+//             res.write("<h1>Currency Database</h1>");
+//             res.end();
+//             break;
+//         case "/currencies":
+//             res.writeHead(200, { "Content-Type": "application/json" });
+//             res.write(JSON.stringify(apiData));
+//             res.end();
+//             break;
+
+//         default:
+//             res.writeHead(404, { "Content-Type": "text/html" });
+//             res.write(JSON.stringify({ message: "Invalid Symbol" }));
+//             res.end();
+//             break;
+//     }
+// });
+
+const aboutData = {
+    "page": "ABOUT PAGE",
+    "message": "HAVE YOU ENJOYED THE NODE JS RUNTIME",
+    "currentTime": new Date().toTimeString(),
+}
+
 const server = http.createServer((req, res) => {
     switch (req.url) {
         case "/":
             res.writeHead(200, { "Content-Type": "text/html" });
-            res.write("<h1>Currency Database</h1>");
+            res.write("<h1>WELCOME ALOK IN NODE JS SERVER</h1>");
             res.end();
             break;
-        case "/currencies":
-            res.writeHead(200, { "Content-Type": "application/json" });
-            res.write(JSON.stringify(apiData));
+        case "/about":
+            res.writeHead(202, { "Content-Type": "application/json" });
+            res.write(JSON.stringify(aboutData));
             res.end();
             break;
-
+            
         default:
-            res.writeHead(404, { "Content-Type": "text/html" });
-            res.write("404 Not Found");
+            res.writeHead(418, { "Content-Type": "application/json" });
+            res.write(JSON.stringify({ message: "Page not found" }));
             res.end();
             break;
     }
-});
+})
 
 server.listen(8082, () => {
-    console.log("Listening...");
+    console.log("Listening => on 8082");
 });
