@@ -12,7 +12,17 @@ app.get("/", (req, res) => {
 
 // /currencies get route
 app.get("/currencies", (req, res) => {
-    res.send(currenciesData.data);
+    res.status(200).send(currenciesData.data);
+});
+
+app.get("/currencies/:symbol", (req, res) => {
+    console.log(req.params.symbol);
+    const currenciesDataFindWithSymbol = currenciesData.data.find((currency) => currency.id.toLowerCase() === req.params.symbol.toLowerCase());
+    // console.log(typeof(currenciesDataFindWithSymbol))
+    if (currenciesDataFindWithSymbol === undefined)
+        return res.status(404).send({ message: "Invalid Symbol" });
+    res.status(200).send(currenciesDataFindWithSymbol);
+    console.log(currenciesDataFindWithSymbol)
 });
 
 // listening a port
