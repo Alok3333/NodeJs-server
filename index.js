@@ -30,7 +30,7 @@ const apiData = require("./api_data.json");
 //             break;
 //         case "/currencies":
 //             res.writeHead(200, { "Content-Type": "application/json" });
-//             res.write(JSON.stringify(apiData));
+//             res.write(JSON.stringify(apiData.data));
 //             res.end();
 //             break;
 

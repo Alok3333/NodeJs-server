@@ -4,7 +4,7 @@
   "description": "Learning nodejs with multiple things Date to Started => june 4-2024",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
