@@ -12,11 +12,17 @@ app.get("/", (req, res) => {
 
 // /currencies get route
 app.get("/currencies", (req, res) => {
+    const { min_value } = req.query;
+    // console.log(typeof (min_value), min_value, "min val");
+    if(min_value){
+        const currenciesDataWithFilter = currenciesData.data.filter(({min_size}) => Number(min_size) === Number(min_value));
+        return res.status(200).send(currenciesDataWithFilter);
+    }
+    
     res.status(200).send(currenciesData.data);
 });
 
 app.get("/currencies/:symbol", (req, res) => {
-    console.log(req.params.symbol);
     const currenciesDataFindWithSymbol = currenciesData.data.find((currency) => currency.id.toLowerCase() === req.params.symbol.toLowerCase());
     // console.log(typeof(currenciesDataFindWithSymbol))
     if (currenciesDataFindWithSymbol === undefined)
@@ -24,6 +30,7 @@ app.get("/currencies/:symbol", (req, res) => {
     res.status(200).send(currenciesDataFindWithSymbol);
     console.log(currenciesDataFindWithSymbol)
 });
+
 
 // listening a port
 app.listen(PORT, () => {
