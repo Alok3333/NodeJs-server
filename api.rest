@@ -5,7 +5,7 @@ GET http://localhost:8082/
 GET http://localhost:8082/currencies
 
 ###
-GET http://localhost:8082/currencies/inr
+GET http://localhost:8082/currencies/aud
 
 ###
 GET http://localhost:8082/v1/users?category=pro&products=laptop
