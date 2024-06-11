@@ -1,9 +1,5 @@
 const axios = require("axios");
 
-const getText = (req, res) => {
-    res.send(`<h1>Currency Database</h1>`);
-};
-
 const getCurrencies = async (req, res) => {
     const { min_value } = req.query;
     try {
@@ -27,4 +23,4 @@ const getCurrenciesBySymbol = async (req, res) => {
     } catch (err) { res.status(400).send({ message: "Bad Request" }) }
 };
 
-module.exports = { getText, getCurrencies, getCurrenciesBySymbol }
+module.exports = { getCurrencies, getCurrenciesBySymbol }

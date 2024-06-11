@@ -1,24 +1,16 @@
-const { getText, getCurrencies, getCurrenciesBySymbol } = require("./controllers/currencies.controllers");
 const express = require("express");
-const { getUsers, getUserByUuid, getUserSearchByGenderAndAge } = require("./controllers/users.controllers");
+const currencyRouter = require("./routes/currencies.routes");
+const userRouter = require("./routes/user.routes");
 
 // Instance of expressJs
 const app = express();
 const PORT = 8082
 
-// create a routes get
-app.get("/", getText);
+// currencies router use
+app.use("/currencies", currencyRouter);
 
-// /currencies get route
-app.get("/currencies", getCurrencies);
-
-app.get("/currencies/:symbol", getCurrenciesBySymbol);
-
-app.get("/users", getUsers);
-
-app.get("/users/:uuid", getUserByUuid);
-
-app.get("/users/search", getUserSearchByGenderAndAge);
+// users router use
+app.use("/users", userRouter);
 
 // listening a port
 app.listen(PORT, () => {
