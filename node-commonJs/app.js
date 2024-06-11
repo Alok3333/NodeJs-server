@@ -1,4 +1,4 @@
-const { getCurrencies, getCurrenciesBySymbol } = require("./controllers/controllers.currencies");
+const { getCurrencies, getCurrenciesBySymbol } = require("./controllers/currencies.controller");
 const express = require("express");
 
 // Instance of expressJs
