@@ -1,4 +1,4 @@
-const { getUsers, getUserByUuid, getUserSearchByGenderAndAge } = require("../controllers/users.controllers");
+const { getUsers, getUserSearchByGenderAndAge, getUserByUuid } = require("../controllers/users.controllers");
 const router = require("express").Router();
 
 router.get("/", getUsers);

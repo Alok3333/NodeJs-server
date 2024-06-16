@@ -24,12 +24,32 @@ const getUserByUuid = async (req, res) => {
 
 const getUserSearchByGenderAndAge = async (req, res) => {
     const { gender, age } = req.query;
-    console.log(req.query);
     try {
         const { data: usersData } = await axios.get(`https://gitlab.crio.do/public_content/node-js-sessions/-/raw/master/users.json`);
-        if (gender && age)
-            return res.send(usersData.data.filter((user) => user.gender === gender && user.dob.age === parseInt(age)));
-        res.status(400).send({ message: "Please provides gender or age must to be pass both of them" });
+
+        if (!age && !gender) {
+            return res.status(422).send({ message: "Missing Search Parameters, search using age and/or gender" });
+        }
+
+        if (!age)
+            return res.status(400).send({ message: "Age must to be pass" });
+
+        if (age) {
+            if (isNaN(age))
+                return res.status(422).send({ message: "Age parameter should be a number" });
+        }
+
+        if (age < 0 || age >= 100) {
+            return res.status(422).send({ message: "Age out of bounds. It should be a number between 0 to 100" });
+        }
+
+        if (gender) {
+            if (!["female", "male"].includes(gender)) {
+                return res.status(422).send({ message: "Gender to search can either be 'male' or 'female'" });
+            }
+        }
+
+        res.send(usersData.data.filter((user) => user.gender === gender && user.dob.age === parseInt(age)));
     } catch (error) {
         res.status(500).send({ message: "url query are not passed." });
     }
